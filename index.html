@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number-domain-expansion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Calculator Body -->
+    <div class="c-body">
+        <!-- Calculator Display Screen -->
+        <div class="c-screen" id="display">
+            0
+        </div>
+
+        <!-- Calculator Buttons -->
+        <div class="c-buttons-row">
+            <button class="ac" onclick="clearAll()">AC</button>
+            <button onclick="deleteLast()">&#9003;</button>
+            <button onclick="appendOperator('%')">&#37;</button>
+            <button onclick="appendOperator('/')">&#247;</button>
+            <button onclick="appendNumber(7)">7</button>
+            <button onclick="appendNumber(8)">8</button>
+            <button onclick="appendNumber(9)">9</button>
+            <button onclick="appendOperator('*')">&#215;</button>
+            <button onclick="appendNumber(4)">4</button>
+            <button onclick="appendNumber(5)">5</button>
+            <button onclick="appendNumber(6)">6</button>
+            <button onclick="appendOperator('-')">&#8722;</button>
+            <button onclick="appendNumber(1)">1</button>
+            <button onclick="appendNumber(2)">2</button>
+            <button onclick="appendNumber(3)">3</button>
+            <button onclick="appendOperator('+')">&#43;</button>
+            <button onclick="toggleSign()">&#43;&#47;&#8722;</button>
+            <button onclick="appendNumber(0)">0</button>
+            <button onclick="appendDecimal()">.</button>
+            <button onclick="calculate()" class="opt">&#61;</button>
+        </div>
+
+        <!-- History Section -->
+        <div class="c-history">
+            <h3>Calculation History</h3>
+            <div id="history"></div>
+            <button onclick="clearHistory()">Clear History</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

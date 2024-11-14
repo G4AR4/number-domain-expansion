@@ -1,0 +1,150 @@
+/* Color Variables */
+:root {
+    --text: #f4d8ff;
+    --background: #08000c;
+    --primary: #ce67fe;
+    --secondary: #9d0149;
+    --accent: #fe1242;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* Calculator Body */
+.c-body {
+    width: 100%;
+    max-width: 350px;
+    background-color: var(--background-dark);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Display Screen */
+.c-screen {
+    background-color: var(--background);
+    color: var(--text);
+    font-size: 2em;
+    padding: 20px;
+    text-align: right;
+    min-height: 80px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Calculator Buttons */
+.c-buttons-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+button {
+    padding: 20px;
+    font-size: 1.5em;
+    border: 1px solid var(--background-dark);
+    background-color: var(--background-dark);
+    color: var(--text);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--primary);
+}
+
+button:active {
+    background-color: var(--secondary);
+}
+
+button.opt {
+    background-color: var(--primary);
+}
+
+button.opt:hover {
+    background-color: var(--accent);
+}
+
+button.ac {
+    background-color: var(--secondary);
+}
+
+button.ac:hover {
+    background-color: var(--accent);
+}
+
+/* History Section */
+.c-history {
+    background-color: var(--background-dark);
+    padding: 15px;
+    font-size: 1em;
+}
+
+.c-history h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+#history {
+    max-height: 120px;
+    overflow-y: auto;
+    padding-right: 5px;
+    color: var(--text);
+}
+
+.history-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--background);
+}
+
+.history-entry button {
+    padding: 3px 6px;
+    font-size: 0.8em;
+    color: var(--accent);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.history-entry button:hover {
+    color: var(--secondary);
+}
+
+/* Scrollbar Styling for History */
+#history::-webkit-scrollbar {
+    width: 8px;
+}
+
+#history::-webkit-scrollbar-thumb {
+    background-color: var(--background-dark);
+    border-radius: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 400px) {
+    .c-body {
+        width: 95%;
+    }
+    
+    button {
+        padding: 15px;
+        font-size: 1.3em;
+    }
+}
