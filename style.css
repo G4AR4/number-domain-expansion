@@ -162,6 +162,26 @@ button.ac:hover {
     cursor: pointer;
 }
 
+/* Align 'X' Button to the Right and make it Small and Round */
+.history-entry .delete-button {
+    margin-left: auto; /* Align 'X' button to the right */
+    padding: 5px;
+    font-size: 1.2em; /* Keep the 'X' button size the same */
+    color: var(--accent);
+    border: 2px solid var(--accent); /* Small border for contrast */
+    border-radius: 50%; /* Round shape */
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Hover Effect on 'X' Button */
+.history-entry .delete-button:hover {
+    background-color: var(--accent);
+    color: var(--background-light);
+    transform: scale(1.2); /* Slightly increase size on hover for effect */
+}
+
 .history-entry button:hover {
     color: var(--secondary);
 }
@@ -187,4 +207,3 @@ button.ac:hover {
         font-size: 1.3em;
     }
 }
-
