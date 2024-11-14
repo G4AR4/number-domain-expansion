@@ -2,6 +2,7 @@
 :root {
     --text: #f4d8ff;
     --background: #08000c;
+    --background-light: #1a0b1c; /* Slightly lighter than main background */
     --primary: #ce67fe;
     --secondary: #9d0149;
     --accent: #fe1242;
@@ -24,19 +25,23 @@ body {
     color: var(--text);
 }
 
-/* Calculator Body */
+/* Calculator Container */
 .c-body {
-    width: 100%;
-    max-width: 350px;
-    background-color: var(--background-dark);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 100%; /* Full width */
+    max-width: 380px;
+    background-color: var(--background-light);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    margin: 20px 0; /* Adds space at top and bottom */
+    display: flex;
+    flex-direction: column;
+    height: auto;
 }
 
 /* Display Screen */
 .c-screen {
-    background-color: var(--background);
+    background: linear-gradient(135deg, var(--background) 0%, #1f122a 100%);
     color: var(--text);
     font-size: 2em;
     padding: 20px;
@@ -44,32 +49,48 @@ body {
     min-height: 80px;
     overflow: hidden;
     white-space: nowrap;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-grow: 1; /* Ensure screen takes available space */
 }
 
 /* Calculator Buttons */
 .c-buttons-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
 }
 
+/* Each button should have the same height as the screen */
 button {
-    padding: 20px;
+    width: 100%;
+    height: 100%; /* Ensures button height matches screen height */
     font-size: 1.5em;
-    border: 1px solid var(--background-dark);
-    background-color: var(--background-dark);
+    border: none;
+    background-color: var(--background-light);
     color: var(--text);
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Button Hover and Active States */
 button:hover {
     background-color: var(--primary);
 }
 
 button:active {
     background-color: var(--secondary);
+    transform: scale(0.95); /* Slight scale-down on click */
 }
 
+/* Special Button Colors */
 button.opt {
     background-color: var(--primary);
 }
@@ -88,9 +109,27 @@ button.ac:hover {
 
 /* History Section */
 .c-history {
-    background-color: var(--background-dark);
+    background-color: var(--background-light);
     padding: 15px;
     font-size: 1em;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Clear History Button with Rounded Borders */
+.c-history button {
+    padding: 8px 12px;
+    font-size: 1em;
+    color: var(--accent);
+    background: transparent;
+    border: 1px solid var(--accent);
+    border-radius: 6px; /* Rounded corners instead of circular */
+    cursor: pointer;
+}
+
+.c-history button:hover {
+    color: var(--secondary);
+    border-color: var(--secondary);
 }
 
 .c-history h3 {
@@ -148,3 +187,4 @@ button.ac:hover {
         font-size: 1.3em;
     }
 }
+
